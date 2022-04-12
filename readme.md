@@ -1,5 +1,9 @@
 # AWS Instance Connect PHP
-This tool will let you use AWS Instance Connect to SSH into your EC2 instances quickly with a high degree of security using your AWS credentials and a generated public/private key created and then immediately destroyed.
+This tool lets you SSH into AWS EC2 instances with nothing but your AWS IAM credentials that you probably already have in your home directory if you work with AWS.
+
+To be more specific it uses the AWS SDK to access AWS Instance Connect to SSH into your EC2 instances quickly with a high degree of security because a key is generated for one time use and then immediately destroyed.
+
+
 
 ## Configuration
 Please follow the AWS instructions for setting up your AWS credentials in `~/.aws/credentials`
@@ -61,7 +65,8 @@ $IC->name = 'i-0e19ee2d63877633f';
 $IC->publicKey = '/home/user/.ssh/rsa.pub';
 $IC->privateKey = '/home/user/.ssh/rsa';
 
-// if you wish for the key to be authorized but for no SSH connection to be created (incase you wish to use the key with something else like SCP)
+// if you wish for the key to be authorized but for no SSH connection to be created
+// incase you wish to use the key with something else like SCP or a tunnel
 $IC->noConnect = false;
 
 $IC->start();
@@ -69,11 +74,17 @@ $IC->start();
 
 ## Why?
 
-The security benefit of using this tool lets you create EC2 instances with no authorized SSH keys at all initially. The AWS login is instead used. This lets you add or remove users simply by adding or removing them from your AWS console through the normal user management flow.
+By using AWS credentials to login instead of SSH keys it is easier to manage your users and you can actually withdraw access without having to manually delete any keys. You can add or remove users simply by adding or removing them from your AWS console through the normal user management interface.
+
+## Okay but seriously. Is this secure?
+The code is super simple. Only about 200 lines of code. Feel free to read it. I make use of phpseclib to make the keys and the official AWS SDK does the actual leg work.
 
 # Support
 Buy me a beer!
 
+Ko-Fi: https://ko-fi.com/henryparadiz
 BTC - bc1qqqejxpuxgeyxx5fkyan8tpeuwyenks8fa4zldf
 
-
+I wrote this tool for myself but I hope others find it useful.
+I'm happy to work on this further if people begin to use it.
+Feel free to make feature requests. I'm eager to hear about other use cases.

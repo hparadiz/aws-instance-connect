@@ -45,7 +45,14 @@ class InstanceConnect
         $this->generateKey();
     }
 
-    public function generateKey()
+    /**
+     * Makes an OpenSSH 2048 bit key.
+     * Drops it into public / private key files.
+     * chmods to only allow read/write by owner
+     *
+     * @return void
+     */
+    public function generateKey(): void
     {
         if (empty($this->publicKey) || empty($this->privateKey)) {
             /**
@@ -72,7 +79,12 @@ class InstanceConnect
         }
     }
 
-    public function deleteKey()
+    /**
+     * Deletes the public/private key files
+     *
+     * @return void
+     */
+    public function deleteKey(): void
     {
         unlink($this->privateKey);
         unlink($this->publicKey);
