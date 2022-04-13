@@ -1,4 +1,7 @@
 # AWS Instance Connect PHP
+[![Latest Unstable Version](https://poser.pugx.org/hparadiz/aws-instance-connect/v/stable)](https://packagist.org/packages/hparadiz/aws-instance-connect)
+[![License](https://poser.pugx.org/hparadiz/aws-instance-connect/license)](https://packagist.org/packages/hparadiz/aws-instance-connect)
+
 This tool lets you SSH into AWS EC2 instances with nothing but your AWS IAM credentials that you probably already have in your home directory if you work with AWS.
 
 To be more specific it uses the AWS SDK to access AWS Instance Connect to SSH into your EC2 instances quickly with a high degree of security because a key is generated for one time use and then immediately destroyed.
