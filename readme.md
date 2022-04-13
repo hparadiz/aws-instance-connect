@@ -65,26 +65,31 @@ $IC->name = 'i-0e19ee2d63877633f';
 $IC->publicKey = '/home/user/.ssh/rsa.pub';
 $IC->privateKey = '/home/user/.ssh/rsa';
 
-// if you wish for the key to be authorized but for no SSH connection to be created
-// incase you wish to use the key with something else like SCP or a tunnel
+// for the key to be authorized but for no SSH connection to be created
+// to use the key with something else like SCP or a tunnel
 $IC->noConnect = false;
 
 $IC->start();
 ```
 
-## Why?
+## FAQ
+### Why?
 
 By using AWS credentials to login instead of SSH keys it is easier to manage your users and you can actually withdraw access without having to manually delete any keys. You can add or remove users simply by adding or removing them from your AWS console through the normal user management interface.
 
-## Okay but seriously. Is this secure?
+### Okay but seriously. Is this secure?
 The code is super simple. Only about 200 lines of code. Feel free to read it. I make use of phpseclib to make the keys and the official AWS SDK does the actual leg work.
 
+### Why PHP?
+Since I work with PHP projects this is just conveniant for me.
+
 # Support
-Buy me a beer!
-
-Ko-Fi: https://ko-fi.com/henryparadiz
-BTC - bc1qqqejxpuxgeyxx5fkyan8tpeuwyenks8fa4zldf
-
 I wrote this tool for myself but I hope others find it useful.
 I'm happy to work on this further if people begin to use it.
 Feel free to make feature requests. I'm eager to hear about other use cases.
+
+If you wish to support this project please see the links below.
+
+Ko-Fi: https://ko-fi.com/henryparadiz
+
+BTC - bc1qqqejxpuxgeyxx5fkyan8tpeuwyenks8fa4zldf
