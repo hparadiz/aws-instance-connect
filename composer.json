@@ -1,7 +1,7 @@
 {
     "name": "hparadiz/aws-instance-connect",
     "description": "Uses AWS Instance Connect API to authorize an SSH key and automatically runs the SSH command using that key for you.",
-    "version": "0.1",
+    "version": "0.2",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -10,13 +10,13 @@
             "email": "henry.paradiz@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "aws/aws-sdk-php": "3.*",
         "filp/whoops": "^2.1",
         "symfony/var-dumper": "^3.0",
         "league/climate": "^3.4",
-        "ulrichsg/getopt-php": "dev-master",
+        "ulrichsg/getopt-php": "~4.0",
         "phpseclib/phpseclib": "~3.0"
     },
     "autoload": {
