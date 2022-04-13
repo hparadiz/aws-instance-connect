@@ -10,6 +10,9 @@
             "email": "henry.paradiz@gmail.com"
         }
     ],
+    "bin": [
+        "bin/ic"
+    ],
     "minimum-stability": "stable",
     "require": {
         "aws/aws-sdk-php": "3.*",
