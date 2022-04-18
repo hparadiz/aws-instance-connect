@@ -218,7 +218,6 @@ class InstanceConnect
     {
         $cmd = sprintf('ssh -i "%s" %s@%s', $this->privateKey, $this->user, $instance['PublicDnsName']);
         passthru($cmd);
-        $this->deleteKey();
     }
 
     /**
@@ -251,5 +250,13 @@ class InstanceConnect
          * **/
         $result = $this->Ec2Client->describeInstances();
         return $result->search(sprintf('Reservations[?not_null(Instances[?Tags[?Key==`%s` && Value == `%s`]])].Instances[*][]', $key, $value));
+    }
+
+    public function __destruct()
+    {
+        // keep key if noConnect is true
+        if (!$this->noConnect) {
+            $this->deleteKey();
+        }
     }
 }

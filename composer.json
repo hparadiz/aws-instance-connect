@@ -1,7 +1,7 @@
 {
     "name": "hparadiz/aws-instance-connect",
     "description": "Uses AWS Instance Connect API to authorize an SSH key and automatically runs the SSH command using that key for you.",
-    "version": "0.3",
+    "version": "0.4",
     "type": "project",
     "license": "MIT",
     "authors": [
